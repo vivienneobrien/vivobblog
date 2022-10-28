@@ -1,0 +1,19 @@
+.BlogPostItem {
+  margin: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+.BlogPostItem ul {
+  margin-left: 0;
+}
+.Tags{
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  color: grey;
+}
+
+h4{
+  color: grey;
+}

@@ -1,0 +1,34 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  background: #84CDEE;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 1rem;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1rem
+}
+
+.menuItem {
+  list-style: none;
+
+
+ 
+}
+
+.nav a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav li:active {
+  background-color: red;
+}
+
+.nav li:hover {
+  background-color: red;
+}
