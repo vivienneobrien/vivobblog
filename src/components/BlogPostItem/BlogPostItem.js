@@ -6,7 +6,7 @@ const BlogPostItem = () => {
   console.log(data);
   return (
     <div className={styles.BlogPostItem}>
-      <ul className={styles.Tags}>
+      <ul className={styles.Categories}>
         <li>{BlogDataObject.map((e) => e.categories[0])[0]}</li>
         <li>{BlogDataObject.map((e) => e.categories[1])[0]}</li>
       </ul>
