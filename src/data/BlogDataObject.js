@@ -1,6 +1,6 @@
 const BlogDataObject = [
   {
-    title: "What are my go-to project imports",
+    title: "What are my go-to project imports?",
     date: "October 28, 2022",
     categories: ["CSS", "HTML"],
     content:
