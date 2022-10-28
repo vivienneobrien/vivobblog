@@ -14,10 +14,15 @@ const BlogPostItem = () => {
         <li>{BlogDataObject.map((e) => e.categories[1])[0]}</li>
         <li>{BlogDataObject.map((e) => e.categories[2])[0]}</li>
       </ul>
+
       <h1>{BlogDataObject.map((e) => e.title)[0]}</h1>
       <h4>{BlogDataObject.map((e) => e.date)[0]}</h4>
-      <p>{BlogDataObject.map((e) => e.content)[0]}</p>
+      <p className={styles.Content}>
+        {BlogDataObject.map((e) => e.content)[0]}
+      </p>
+      <code className={styles.CodeSnippet}> This is a code snippet</code>
       <button className={styles.ContinueButton}>Continue Reading</button>
+
       <div className={styles.divider} />
     </div>
   );

@@ -23,6 +23,19 @@
   border-bottom: 1px solid  rgb(224, 107, 177); ;
 }
 
+.Content {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.CodeSnippet {
+  margin: 3rem;
+  padding: 3rem;
+ 
+  background: black;
+  color: white
+}
+
 h4 {
   color: grey;
 }
