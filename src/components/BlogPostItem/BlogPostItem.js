@@ -11,6 +11,8 @@ const BlogPostItem = () => {
       <h1>{BlogDataObject.react.title}</h1>
       <h4>{BlogDataObject.react.date}</h4>
       <p>{BlogDataObject.react.content}</p>
+      <button className={styles.ContinueButton}>Continue Reading</button>
+      <div className={styles.divider} />
     </div>
   );
 };
