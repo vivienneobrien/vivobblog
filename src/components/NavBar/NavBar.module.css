@@ -13,11 +13,19 @@
   gap: 1rem
 }
 
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.HeaderContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .menuItem {
   list-style: none;
-
-
- 
 }
 
 .nav a {

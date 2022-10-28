@@ -13,10 +13,10 @@ const CustomLink = ({ to, children }) => {
 const NavBar = () => {
   return (
     <nav className={styles.nav}>
-      <Link to="/" className={styles.title}>
-        Viv O'Brien
-      </Link>
-
+      <div className={styles.HeaderContainer}>
+        <p className={styles.title}>Viv O'Brien</p>
+        <p className={styles.subtitle}>Software Engineer</p>
+      </div>
       <ul>
         <CustomLink to="/react">React</CustomLink>
         <CustomLink to="/testing">Testing</CustomLink>

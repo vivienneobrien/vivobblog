@@ -5,7 +5,6 @@ function App() {
   return (
     <>
       <NavBar />
-
       <Routes>
         <Route path="/" element={<BlogPostItem />}></Route>
         <Route path="/react" element={<BlogPostItem />}></Route>
