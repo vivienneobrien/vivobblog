@@ -5,8 +5,8 @@ const BlogPostItem = () => {
   return (
     <div className={styles.BlogPostItem}>
       <ul className={styles.Tags}>
-        <li>{BlogDataObject.react.tags[0]}</li>
-        <li>{BlogDataObject.react.tags[1]}</li>
+        <li>{BlogDataObject.react.categories[0]}</li>
+        <li>{BlogDataObject.react.categories[1]}</li>
       </ul>
       <h1>{BlogDataObject.react.title}</h1>
       <h4>{BlogDataObject.react.date}</h4>
