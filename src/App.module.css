@@ -1,4 +1,10 @@
 .Footer {
   margin: 5rem;
- 
+}
+
+.MadeWithLove{
+  display: flex;
+  justify-content: center;
+  margin: 5rem;
+  color: #e37004;
 }

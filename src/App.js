@@ -21,6 +21,7 @@ function App() {
       <div className={styles.Footer}>
         <FooterRecentPosts />
         <FooterCategories />
+        <p className={styles.MadeWithLove}>Made with 🧡 by Viv O'Brien</p>
       </div>
     </>
   );
