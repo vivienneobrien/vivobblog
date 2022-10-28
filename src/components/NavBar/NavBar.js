@@ -21,6 +21,7 @@ const NavBar = () => {
       <ul>
         <CustomLink to="/react">React</CustomLink>
         <CustomLink to="/testing">Testing</CustomLink>
+        <CustomLink to="/testing">Amazon Web Services (AWS)</CustomLink>
       </ul>
     </nav>
   );
