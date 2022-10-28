@@ -1,6 +1,7 @@
 import styles from "./NavBar.module.css";
 import { Link } from "react-router-dom";
 import classnames from "classnames";
+
 const CustomLink = ({ to, children }) => {
   const path = window.location.pathname;
   return (
