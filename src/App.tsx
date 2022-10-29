@@ -4,7 +4,6 @@ import MainPage from "./modules/MainPage";
 import About from "./components/About/About";
 import Footer from "./modules/Footer";
 import NavBar from "./components/NavBar/NavBar";
-import AllCategories from "./components/AllCategories/AllCategories";
 import TotalPosts from "./components/TotalPosts/TotalPosts";
 import Sketch from "./sketches/Sketch";
 function App() {
@@ -12,7 +11,7 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <TotalPosts />
-      <AllCategories />
+
       {/* <div className={styles.Sketch}>
         <Sketch />
       </div> */}

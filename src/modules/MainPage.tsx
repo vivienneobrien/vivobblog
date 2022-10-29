@@ -1,9 +1,10 @@
 import EachObject from "../components/BlogPostItem/EachObject";
-
+import AllCategories from "../components/AllCategories/AllCategories";
 const MainPage = () => {
   return (
     <>
-      <EachObject />
+      <AllCategories />
+      {/* <EachObject /> */}
     </>
   );
 };
