@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-
+      <TotalPosts />
       <AllCategories />
       {/* <div className={styles.Sketch}>
         <Sketch />
