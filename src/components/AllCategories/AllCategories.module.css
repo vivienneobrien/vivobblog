@@ -1,5 +1,16 @@
+
+.CategoriesContainer{
+  border: 2px solid white;
+  background: rgb(52, 194, 52);
+  color: white;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 25px;
+}
 .Categories{
   list-style: none;
   color: rgb(224, 107, 177);
   font-weight: 500;
+  position: absolute;
+ 
 }
