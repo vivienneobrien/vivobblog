@@ -6,8 +6,6 @@ import Footer from "./modules/Footer";
 import NavBar from "./components/NavBar/NavBar";
 import TotalPosts from "./components/TotalPosts/TotalPosts";
 import Sketch from "./sketches/Sketch";
-import { StrictMode } from "react";
-import AllCategories from "./components/AllCategories/AllCategories";
 
 function App() {
   return (
