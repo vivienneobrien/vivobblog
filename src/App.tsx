@@ -6,6 +6,9 @@ import Footer from "./modules/Footer";
 import NavBar from "./components/NavBar/NavBar";
 import TotalPosts from "./components/TotalPosts/TotalPosts";
 import Sketch from "./sketches/Sketch";
+import { StrictMode } from "react";
+import AllCategories from "./components/AllCategories/AllCategories";
+
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +22,7 @@ function App() {
         <Route path="/" element={<MainPage />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/react" element={<MainPage />}></Route>
+        <Route path="/testing" element={<About />}></Route>
       </Routes>
       <div className={styles.Footer}>
         <Footer />
