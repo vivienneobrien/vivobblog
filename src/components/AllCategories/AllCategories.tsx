@@ -17,10 +17,12 @@ import styles from "./AllCategories.module.css";
 // };
 
 const AllCategories = () => {
-  const categories = Array.from(
-    new Set(BlogDataObject.flatMap(({ categories }) => categories))
+  const categoriesSet = new Set(
+    BlogDataObject.flatMap(({ categories }) => categories)
   );
-  console.log(categories);
+  console.log("XXXX CATEGORIES SET XXXX", categoriesSet);
+  const categories = Array.from(categoriesSet);
+  console.log("XXXX CATEGORIES ARRAY.FROM XXXX", categories);
 
   return (
     <>
