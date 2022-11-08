@@ -76,3 +76,8 @@ Create a swagger spec
 - Line 44 is where the code coverage is needed. Sometimes you can have from 32-44 lines you need to test.
 
 ![Line 44 is where the code coverage is needed. Sometimes you can have from 32-44 lines you need to test.](../assets/code_coverage.png)
+
+- Viewing your ReadMe.md with the preview button in VS code.
+
+![PreviewButton](../assets/preview_middle_button.png)
+![Preview](../assets/preview_readme.png)
