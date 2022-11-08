@@ -6,10 +6,16 @@
 
 ### New lesson nov 7th
 
+`join` doesn't add a separator at the end
+
+```js
+<div className={styles.MyStyleName}>[{value.join(", ")}]</div>
+```
+
 What a substring looks like in javascript. Similar to length-1.
 
 ```js
-<div className={styles.MyStyleName}>[{value.join(", ").slice(0, -1)}]</div>
+.slice(0, -1)
 ```
 
 When creating a new array. If you want to two arrays into one array, make sure you do the spread operator i.e. `...`.
@@ -25,3 +31,4 @@ When wanting to rebase
 3. Go back to your branch and say `git rebase main`
 4. Then since there will be no changes to commit do `git push --force`
 5. Look at screenshot git_rebase.png to see a successful rebase output
+6. For more information https://docs.gitlab.com/ee/topics/git/git_rebase.html#force-push
