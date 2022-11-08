@@ -17,3 +17,11 @@ When creating a new array. If you want to two arrays into one array, make sure y
 ```js
             items={[...value, ...DUMMY_VALUE]}
 ```
+
+When wanting to rebase
+
+1. Commit your changes
+2. Pull from main and makes sure its up to date
+3. Go back to your branch and say `git rebase main`
+4. Then since there will be no changes to commit do `git push --force`
+5. Look at screenshot git_rebase.png to see a successful rebase output
