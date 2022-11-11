@@ -81,3 +81,70 @@ Create a swagger spec
 
 ![PreviewButton](../assets/preview_middle_button.png)
 ![Preview](../assets/preview_readme.png)
+
+### Nov 9, 22
+
+> Server-side request forgery (SSRF)
+
+You can visit a website, your browser is persuaded/ loaded from another resource to send requests to another site on your behalf. It used to be a big thing where developers were less aware of different request types. Now it can still be a thing. Where if you have wifi people can make different requests with that. An attack by the user frontend via the user browser. Attacker can get you to do things on your own behalf. CSRF -> Attack on the client. SSRF -> Attack on the server.
+
+> Shortcuts of VS Code
+
+To be honest sometimes it works and sometimes it doesnt and I get confused so I am just going to make a note of it here: Command Shift L allows us to do variable refactors.
+
+> @TODOs in the codebase
+> If youre going to have a TODO always have a link to the ticket it is referring to. You can set this up in linting apparently
+
+> JSDoc versus normal comment
+
+```js
+**
+ * @property {number} listHeight must match Column__TableList height
+ * @property {number} itemSize must  must match ListItem height
+ *
+ **/
+
+const defaultOptions: OptionProps = {
+  listHeight: 354,
+  itemSize: 48,
+  [...]
+
+```
+
+```js
+/** @keyword This is jsdoc that will come up when you hover over*/
+```
+
+versus
+
+`// this is a comment`
+
+You should not have an @ outside the js doc statement. Its not a keyword by javascript.
+
+> Testing
+
+Rather than destructure from render all the time, we should import screen from the test-utils import and then we get access to all these methods e.g. screen.getByText(). Deconstructed for all.
+
+> Fun CSS
+> text-overflow: ellipsis;
+
+> `:global`
+> global name not a module name. should not be used outside this condition. Used theme but should never be used outside of file. Breaking the idea of having a module. Only redefining the things based on theme.
+
+> Translation
+
+```js
+ allItemsLabel: t('translation:itemSelector.allItemsLabel', {
+                  label: parameter
+                }),
+```
+
+`"allItemsLabel": "{{ label }}",`
+
+> If empty array
+
+items={data?.editorColumns[0].options ?? []}
+
+> Plugin for i18y
+
+https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally
