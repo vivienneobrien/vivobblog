@@ -163,7 +163,7 @@ First you need to import the whole file/bundle where your hook is by doing \* an
 import * as GetOptions from "api/hooks/useGetOptions";
 
 const spy = jest
-  .spyOn(GetParameterOptions, "useGetParameterOptions")
+  .spyOn(GetOptions, "useGetOptions")
   // .mockReturnValue(MOCK_RETURNVALUE)
   .mockImplementation(() => MOCK_RETURNVALUE);
 ```
@@ -172,9 +172,9 @@ LOOK AT HOW `as` is used here:
 
 ```js
  const spy = jest
-      .spyOn(GetParameterOptions, 'useGetParameterOptions')
+      .spyOn(GetOptions, 'useGetOptions')
       .mockReturnValue(
-        MOCK_RETURNVALUE as UseQueryResult<GetParameterOptionsResponse>
+        MOCK_RETURNVALUE as UseQueryResult<GetOptionsResponse>
       )
 
 expect(spy).toHaveBeenCalled() // otherwise linting issue
@@ -199,3 +199,7 @@ ls -al // views hidden files in the repo
 ```js
   'data-testid': dataTestId
 ```
+
+> Favourite VS Code Command Refactor
+
+- SHIFT, CMD and L
