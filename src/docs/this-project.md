@@ -148,3 +148,54 @@ items={data?.editorColumns[0].options ?? []}
 > Plugin for i18y
 
 https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally
+
+> Ignoring a line for typescript
+
+`@ts-expect-error comment after this`
+
+### Nov 14, 22
+
+> Mocking data response from a hook
+
+First you need to import the whole file/bundle where your hook is by doing \* and then renaming it as shown below in imports. Then what spy does is it "spies on"/ monitors every call to this hook in the spyOn block. Jest monitors it instead of returning it it will just return the mock return values.
+
+```js
+import * as GetOptions from "api/hooks/useGetOptions";
+
+const spy = jest
+  .spyOn(GetParameterOptions, "useGetParameterOptions")
+  // .mockReturnValue(MOCK_RETURNVALUE)
+  .mockImplementation(() => MOCK_RETURNVALUE);
+```
+
+LOOK AT HOW `as` is used here:
+
+```js
+ const spy = jest
+      .spyOn(GetParameterOptions, 'useGetParameterOptions')
+      .mockReturnValue(
+        MOCK_RETURNVALUE as UseQueryResult<GetParameterOptionsResponse>
+      )
+
+expect(spy).toHaveBeenCalled() // otherwise linting issue
+```
+
+> _Learning is part of the health check of Retro_
+
+> Terminal Things
+
+```js
+rm -r fileIWantToDelete
+git rm fileIWantDeleted
+ls -al // views hidden files in the repo
+```
+
+> Typescript: Knowing when to use Partial
+
+> Testing
+
+- Wrapping everything in forEach when writing tests that have similar parameters. Just make two objects with the same values then put those two objects into a generic object. Then say `thatObject.forEach( ({deconstuctParamsFromObject}) => { // do shit })`
+
+```js
+  'data-testid': dataTestId
+```
