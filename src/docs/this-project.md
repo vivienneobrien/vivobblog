@@ -210,6 +210,8 @@ ls -al // views hidden files in the repo
 
 - `const justOneObject = [ObjectName]`
 
+Making your mocks into a support class then import it in which is needs to be used in.
+
 ```js
 export const mockJobTypeOneComponent = {
   name: "orchestration",
@@ -231,7 +233,5 @@ Then you can do a
 
 ```js
 import {bothMockComponents} from './somewhere'
-bothMockComponents.forEach({name, instanceID}) => { stuff}`
+bothMockComponents.forEach({name, instanceID}) => {Do Stuff}`
 ```
-
-Make this into a suppose class then import it.
