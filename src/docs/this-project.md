@@ -221,11 +221,17 @@ export const mockJobTypeTwoComponent = {
   instanceId: "14360",
 };
 
-export const bothComponents = [
+export const bothMockComponents = [
   mockJobTypeOneComponent,
   mockJobTypeTwoComponent,
 ];
 ```
 
-then you can do a `bothComponents.forEach`
+Then you can do a
+
+```js
+import {bothMockComponents} from './somewhere'
+bothMockComponents.forEach({name, instanceID}) => { stuff}`
+```
+
 Make this into a suppose class then import it.
