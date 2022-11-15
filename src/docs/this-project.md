@@ -203,3 +203,29 @@ ls -al // views hidden files in the repo
 > Favourite VS Code Command Refactor
 
 - SHIFT, CMD and L
+
+> Quick one on data structures
+
+- `const addingTwoArrays = [...ObjectName, AnotherObject]`
+
+- `const justOneObject = [ObjectName]`
+
+```js
+export const mockJobTypeOneComponent = {
+  name: "orchestration",
+  instanceId: "14360",
+};
+
+export const mockJobTypeTwoComponent = {
+  name: "orchestration",
+  instanceId: "14360",
+};
+
+export const bothComponents = [
+  mockJobTypeOneComponent,
+  mockJobTypeTwoComponent,
+];
+```
+
+then you can do a `bothComponents.forEach`
+Make this into a suppose class then import it.
