@@ -235,3 +235,41 @@ Then you can do a
 import {bothMockComponents} from './somewhere'
 bothMockComponents.forEach({name, instanceID}) => {Do Stuff}`
 ```
+
+### Nov 15, 22
+
+Swagger is great for documentation. This is dummy information build with html and js.
+
+https://petstore.swagger.io/
+
+yaml?
+
+Every end point has to be proceded by the `[ Base URL: petstore.swagger.io/v2 ]` / ` https://petstore.swagger.io/v2/swagger.json`
+
+You can get a response type i.e. it can be in json or xml.
+
+> Normal table
+
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+
+> Alignment on table
+
+| Syntax    | Description |   Test Text |
+| :-------- | :---------: | ----------: |
+| Header    |    Title    | Here's this |
+| Paragraph |    Text     |    And more |
+
+> Swagger versus Postman
+
+Swagger is an API specification & Postman is an API Client and appropriate for API first development while,
+
+| Swagger                                                                                                                                                                                                                                                                                                                                                                              | Description                                                                                                                                                                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Swagger is an API specification. Swagger is basically a description language that is used for the description of RESTful API                                                                                                                                                                                                                                                         | Postman is an API Client and appropriate for API first development while Postman is appropriate for testing such API based on specifications. Postman is computer software that was built with the purpose of creating and testing API’s. Using postman request can be made to the server and the response can be received. |
+| Helps specify request types such as get, post, put, request paths (urls), paramters with respective names or descriptions, examples of bodies or associated definitions, expected responses                                                                                                                                                                                          | Users can store information to run tests in different environments. Users can store data to use in other tests. It can move tests and environments to code repositories easily.                                                                                                                                             |
+| Swagger does the documentation in a standard way (OpenAPI) means in a machine-readable language. Swagger provides you the way to automate the documentation which means it picks up the methods with Get, Put, Post, Delete attributes and prepares the documentation by itself. And as you have done any change to any method, Swagger documentation will automatically be updated. |
+
+![PreviewButton](../assets/postman_versus_swag.png)
