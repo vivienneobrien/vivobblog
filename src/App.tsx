@@ -8,28 +8,22 @@ import TotalPosts from "./components/TotalPosts/TotalPosts";
 import Sketch from "./sketches/Sketch";
 import { useEffect, useState } from "react";
 import Company from "./components/Company/Company";
+import useFetch from "./hooks/useFetch";
+import PostDetails from "./components/PostDetails/PostDetails";
+import AddPostItem from "./components/AddPostItem/AddPostItem";
 
 function App() {
-  const [companyData, setCompanyData] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(true);
-
-  useEffect(() => {
-    fetch("http://localhost:8000/company")
-      // how do i add console.log here
-      .then((res) => res.json()) //https://stackoverflow.com/questions/48774535/js-fetch-api-get-method-return-%C6%92-json-native-code
-      .then((result) => {
-        setTimeout(() => {
-          setCompanyData(result);
-          setIsLoaded(false);
-        }, 3000);
-      })
-      .catch((res) => console.log(res.message));
-  }, []);
+  const {
+    data: companyData,
+    isLoaded,
+    errorInformation,
+  } = useFetch("http://localhost:8000/company");
 
   return (
     <BrowserRouter>
       <NavBar />
       <TotalPosts />
+      {errorInformation && <div>{errorInformation}</div>}
       {isLoaded && <div> Please wait ...</div>}
       {companyData && <Company companyData={companyData} />}
 
@@ -40,7 +34,10 @@ function App() {
         <Route path="/" element={<MainPage />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/react" element={<MainPage />}></Route>
-        <Route path="/testing" element={<About />}></Route>
+        <Route path="/testing/:id" element={<PostDetails />}></Route>
+        <Route path="/testing/:id/:name" element={<PostDetails />}></Route>
+        <Route path="/editingform/:id/:name" element={<AddPostItem />}></Route>
+        <Route path="/createform" element={<AddPostItem />}></Route>
       </Routes>
       <div className={styles.Footer}>
         <Footer />

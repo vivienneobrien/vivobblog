@@ -310,4 +310,26 @@ if (process.env.REACT_APP_USE_MOCKS === 'true' && !('Cypress' in window)) {
 
 In the backend there should be an xlm file that you can link up with swagger.
 
-Using postman allows you to send CRUD operations to backend whether that be useClient() or useSpringClient(). Check this.
+Using postman allows you to send CRUD operations to backend whether that be `useClient()` or `useSpringClient()`. Check this.
+
+> Working with VIM
+
+In Vim, you start out in normal mode.
+
+**Ready to edit**
+
+From there, you can access insert mode by pressing `i` and can edit the text as you'd normally expect. When done editing text, press esc to return to normal mode
+
+**Save changes**
+
+In normal mode, type `:wq` and press Enter to 'Write' and 'Quit' out of Vim.
+
+**Horrible Mistake! Need to exit without changes!**
+
+To avoid applying your changes in Vim, you'd normally use `:q!` (quit without saving, forced) in normal mode, but that won't work for interactive rebasing in the way you'd expect. Instead, you must delete all lines from the text before using `:wq` or `:q!`. An easy way to delete all lines at once in normal mode would be to follow the answer selected from This Question
+
+# Linting disable next line
+
+```
+// eslint-disable-next-line
+```
