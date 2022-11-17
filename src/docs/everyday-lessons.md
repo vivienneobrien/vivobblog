@@ -2,15 +2,15 @@
 
 > I wanted to keep track of the everyday lessons I learn on the job. Mainly to track my progress but also to refer back to my own made rules.
 
-## November 2022
+# November 2022
 
-### Nov 1, 22
+## Nov 1, 22
 
 1. When writing tests
 
 We use `get` when we know the component is in the document and we use `query` when we say not.inTheDocument. `get` will return the DOM in our terminal and return an error but `query` will just return null if it can not find it.
 
-### Nov 7, 22
+## Nov 7, 22
 
 > `join` doesn't add a separator at the end
 
@@ -71,7 +71,7 @@ it("should itemSelectedIsOpen to true once cog is clicked", async () => {
 
 Create a swagger spec
 
-### Nov 8, 22
+## Nov 8, 22
 
 - Line 44 is where the code coverage is needed. Sometimes you can have from 32-44 lines you need to test.
 
@@ -82,7 +82,7 @@ Create a swagger spec
 ![PreviewButton](../assets/preview_middle_button.png)
 ![Preview](../assets/preview_readme.png)
 
-### Nov 9, 22
+## Nov 9, 22
 
 > Server-side request forgery (SSRF)
 
@@ -153,7 +153,7 @@ https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally
 
 `@ts-expect-error comment after this`
 
-### Nov 14, 22
+## Nov 14, 22
 
 > Mocking data response from a hook
 
@@ -236,7 +236,7 @@ import {bothMockComponents} from './somewhere'
 bothMockComponents.forEach({name, instanceID}) => {Do Stuff}`
 ```
 
-### Nov 15, 22
+## Nov 15, 22
 
 Swagger is great for documentation. This is dummy information build with html and js.
 
@@ -271,3 +271,43 @@ Swagger is an API specification & Postman is an API Client and appropriate for A
 | Swagger is an API specification. Swagger is basically a description language that is used for the description of RESTful API                                                                                                                                                                                                                                                         | Postman is an API Client and appropriate for API first development while Postman is appropriate for testing such API based on specifications. Postman is computer software that was built with the purpose of creating and testing API’s. Using postman request can be made to the server and the response can be received. |
 | Helps specify request types such as get, post, put, request paths (urls), paramters with respective names or descriptions, examples of bodies or associated definitions, expected responses                                                                                                                                                                                          | Users can store information to run tests in different environments. Users can store data to use in other tests. It can move tests and environments to code repositories easily.                                                                                                                                             |
 | Swagger does the documentation in a standard way (OpenAPI) means in a machine-readable language. Swagger provides you the way to automate the documentation which means it picks up the methods with Get, Put, Post, Delete attributes and prepares the documentation by itself. And as you have done any change to any method, Swagger documentation will automatically be updated. |
+
+## Nov 17, 22
+
+> Translations
+
+You can provide a fallback translation for when a key doesn't exist e.g.:
+
+```js
+t(`components.${componentId}.displayName`, t("unknownComponent"));
+```
+
+Will return "Unknown component" when it can't find a translation with the provided key.
+
+OR you can also do that by just passing the keys!
+
+t([`components.${componentId}.displayName`, 'unknownComponent'])
+
+> How does the backend talk to the frontend?
+
+This tells us that we are going to run on the test i.e. local environment and we are going to use
+
+```js
+PORT = 3443;
+HOST = grape.appName - local.companyname.com; //(no spaces)
+HTTPS = false;
+REACT_APP_ENVIRONMENT = "test";
+REACT_APP_USE_MOCKS = true;
+```
+
+When you run your app, it will check if it is true, if it is true then `setupWorker` will be activated which will act as an interceptor to use mock data instead of your backend data. All of the hooks will be intercepted. Right now we are using two backends i.e. BE Fork and BE Spring that talk to WorkingTreeStore i.e our DB. We also have CIS extending our BE which gives us the data structure and types of our data. WorkingTreeStore updated these params with the values.
+
+```js
+if (process.env.REACT_APP_USE_MOCKS === 'true' && !('Cypress' in window)) {
+  const worker = setupWorker(
+    ...useGetComponentXHandlers,
+```
+
+In the backend there should be an xlm file that you can link up with swagger.
+
+Using postman allows you to send CRUD operations to backend whether that be useClient() or useSpringClient(). Check this.
