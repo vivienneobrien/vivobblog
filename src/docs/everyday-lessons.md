@@ -30,7 +30,7 @@ We use `get` when we know the component is in the document and we use `query` wh
 items={[...value, ...DUMMY_VALUE]}
 ```
 
-If you set your type to `() => void`, when you are testing it and the type is required, you can do `() => undefined`
+If you set your type to `() &rarr; void`, when you are testing it and the type is required, you can do `() &rarr; undefined`
 
 > When wanting to rebase
 
@@ -48,7 +48,7 @@ The HyperText Transfer Protocol (HTTP) 503 Service Unavailable server error resp
 The HyperText Transfer Protocol (HTTP) 504 Gateway Timeout server error response code indicates that the server, while acting as a gateway or proxy, did not get a response in time from the upstream server that it needed in order to complete the request.
 
 ```js
-it("should itemSelectedIsOpen to true once cog is clicked", async () => {
+it("should itemSelectedIsOpen to true once cog is clicked", async () &rarr; {
   const MOCK_ISOPEN = jest.fn();
   const { getByLabelText } = render(
     <MicroCta
@@ -86,7 +86,7 @@ Create a swagger spec
 
 > Server-side request forgery (SSRF)
 
-You can visit a website, your browser is persuaded/ loaded from another resource to send requests to another site on your behalf. It used to be a big thing where developers were less aware of different request types. Now it can still be a thing. Where if you have wifi people can make different requests with that. An attack by the user frontend via the user browser. Attacker can get you to do things on your own behalf. CSRF -> Attack on the client. SSRF -> Attack on the server.
+You can visit a website, your browser is persuaded/ loaded from another resource to send requests to another site on your behalf. It used to be a big thing where developers were less aware of different request types. Now it can still be a thing. Where if you have wifi people can make different requests with that. An attack by the user frontend via the user browser. Attacker can get you to do things on your own behalf. CSRF &rarr; Attack on the client. SSRF &rarr; Attack on the server.
 
 > Shortcuts of VS Code
 
@@ -165,7 +165,7 @@ import * as GetOptions from "api/hooks/useGetOptions";
 const spy = jest
   .spyOn(GetOptions, "useGetOptions")
   // .mockReturnValue(MOCK_RETURNVALUE)
-  .mockImplementation(() => MOCK_RETURNVALUE);
+  .mockImplementation(() &rarr; MOCK_RETURNVALUE);
 ```
 
 LOOK AT HOW `as` is used here:
@@ -194,7 +194,7 @@ ls -al // views hidden files in the repo
 
 > Testing
 
-- Wrapping everything in forEach when writing tests that have similar parameters. Just make two objects with the same values then put those two objects into a generic object. Then say `thatObject.forEach( ({deconstuctParamsFromObject}) => { // do shit })`
+- Wrapping everything in forEach when writing tests that have similar parameters. Just make two objects with the same values then put those two objects into a generic object. Then say `thatObject.forEach( ({deconstuctParamsFromObject}) &rarr; { // do shit })`
 
 ```js
   'data-testid': dataTestId
@@ -233,7 +233,7 @@ Then you can do a
 
 ```js
 import {bothMockComponents} from './somewhere'
-bothMockComponents.forEach({name, instanceID}) => {Do Stuff}`
+bothMockComponents.forEach({name, instanceID}) &rarr; {Do Stuff}`
 ```
 
 ## Nov 15, 22
@@ -333,3 +333,93 @@ To avoid applying your changes in Vim, you'd normally use `:q!` (quit without sa
 ```
 // eslint-disable-next-line
 ```
+
+do not do above do this:
+
+```
+    // @ts-expect-error write your comment here
+```
+
+## Nov 18, 22
+
+## Thoughtworks Radar
+
+- Get people together which practices and processes are working for them and sort them into 4 categories:
+
+1. Hold: We do not recommend this due to better practices/ this is something we need to stop doing as an industry
+2. Access: Interesting. Want to see what it could be capable of. Not to the point where a team is working with it.
+3. Trial: Afew of their products and reporting how successful it is. Spike phase.
+4. Adopt: This is brilliant and what we recommend you should use.
+
+_Obvs recommend go away and do your own trialing_
+They do this accessment every 6 months.
+
+How do they choose i.e. whats their dataset? They have regular meet ups. The people in charge of the office i.e. London etc, they will ask their teams and this will build up their list. It is more about the emerging technologies.
+
+4 Quads:
+Techniqhes &rarr; How we build software
+Platforms &rarr; System they use Cypress/ Kubernetes
+Tools &rarr; K6 Performance Testing / Gittogether/ AWS
+Languages/Frameworks &rarr;
+
+**What is Design Tokens?** (in trial)
+When a UX team design, they take your colours, your corner i.e. config stored in one place. Design Token storage is a key value map that you can refer back to in your code base. We kindof do this already with our colours. More could be done on this.
+
+CSS variables &rarr; You cant have an object in CSS variables
+CSS in JS is the best
+
+> Visual Regression Testing
+
+We use PERCY in 2 ways:
+Percy: Run against components we add in isolation
+ETLD: With latest running against local host, you can do the full page visual snapshots. Now you can pass an argument to scope it to specific element on the page.
+Your not just loading the whole component, youre loading the page but looking at the specific feature
+
+> SPA by default?
+
+We do this by default. It allowed teams to have full control over their codebase. We also have baseplate &rarr;; That we will move to a micro-frontend architecture. People started using create-react-app then people have moved on to next and now astro &rarr; static site generator. Introducing routing issues, pages rendering the wrong thing, you are not giving it a framework. The maybe answer, when you decide something is an SPA you are making an architectural decision to call it that regardless of what your project is.
+
+> BUN/ Dino (different ways of running ts &rarr; ts run time)
+
+- They are faster
+
+> How to do arrows in markdown
+
+Up arrow (↑): &uarr;
+Down arrow (↓): &darr;
+Left arrow (←): &larr;
+Right arrow (→): &rarr;;
+Double headed arrow (↔): &harr;
+
+> When talking about enterprise software
+
+- Longevity of framework
+- What we might see if node adopting some of these features
+- We do not use node in anything other than lambdas
+
+> Online services for formatting or pasing code
+
+- Thoughtworks are saying here &rarr; If the site is going to take your data. If that JSON snippet contains an API key then it might steal this. SECURITY. jwt.io
+
+> State of JS
+
+https://stateofjs.com/en-us/
+
+https://2021.stateofjs.com/en-US/libraries/front-end-frameworks
+
+> Yjs &rarr; https://yjs.dev/ (kindof insane)
+
+CRDT &rarr; Conclict Free Replicated Data Type algorithm
+Similar to google docs
+Collaboration online
+Wrapper library you can put into your project
+Miro uses the old algorithm
+Whos using it? https://github.com/yjs/yjs#who-is-using-yjs
+
+> ReactQuery
+
+We are in adopt. Dont use react query to do your state management, good for caching and stuff but not good for storing your state.
+
+> Ladle
+
+Storybook alternative. Faster, neater, smaller version of storybook. Looks alot more base html. It does not support MDX &rarr; on list of thing to do. Backed by veet.
