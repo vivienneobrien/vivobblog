@@ -458,7 +458,7 @@ describe("ETLNode", () => {
 
 ## Nov 21, 22
 
-> You can use css to override the styling of an svg. It doesnt even look like the svg has changed in the dom but it has
+> You can use css to override the styling of an svg. It doesnt even look like the svg has changed in the dom but it has. CAN BE CHANGED "PROGRAMATICALLY". You cant change all the properties in an svg this way e.g. stroke="red"
 
 !['svg css'](../assets/svgcss.png)
 
@@ -499,3 +499,13 @@ describe("Custom Link Styling", () => {
   });
 });
 ```
+
+> look at the css nesting
+
+```js
+ g[data-linkid] path {
+    stroke-width: 10px;
+  }
+```
+
+![](../assets/svgcss.png)
