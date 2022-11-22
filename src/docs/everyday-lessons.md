@@ -500,6 +500,8 @@ describe("Custom Link Styling", () => {
 });
 ```
 
+## Nov 22, 2022
+
 > look at the css nesting
 
 ```js
@@ -509,3 +511,31 @@ describe("Custom Link Styling", () => {
 ```
 
 ![](../assets/svgcss.png)
+
+> path is worth exploring
+
+> Some panel should be virticle(form) and some horizontal (list)
+
+> If you are using something all the time on the page then you need it to be very visible
+
+> If you do it once at the start
+
+> **UX: Affordance**
+
+Idea that an object should tell the user what it does. The natural feature of a UI to tell the user what it is for. When a widget doesnt tell the user what it does you say the afforance is failing.
+
+> UX Very important!
+
+Why are they in the same location? Why is some double click and some single? Why are some double click and some are drag and drop. You should bring a panel closer to the layers of the focus on the page and they it should leave the page it should disappear.
+
+> Key
+
+User-center design.
+
+"We do what users want" -> Not true. Most of the time they dont know what they want. They are bias. The core should be A/B testing. If we user comes to you to tell they want something a certain way because they are used to METL. They might not understand you can do something better cuz they dont know. You need the data but you need to be careful what you decide on.
+
+> Survivorship Bias
+
+Armour too heavy on flight. A report about where the plain got bullet holes. Collecting data. Concentration where are all the holes in the plain? Where do we increase the armour well we look for when we have the most bullet holes. Data of every plain that came back alive from the missions, you are not looking in the plain that never came back. The holes are not that important because they made it back but the planes that didn't come back we don't have the data. So they decided on the exact opposite of the plain. Not because the data was wrong but analysis and interpretation was bias because you were solely relying on the survivers. We get response by people who are the only ones who are replying to us. Your analaysis is only based on who volunteer to get back. More likely to get positive feedback than negative. If the users are angry or the "we don't know" are unlikely to give us feedback. The _visible_ part of the ice berg. People might drop out before the end so you never get the feedback. You only know the people who stayed on why they stayed on.
+
+**Abraham Wald** was the guy who saw it.
