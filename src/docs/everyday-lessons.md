@@ -423,3 +423,79 @@ We are in adopt. Dont use react query to do your state management, good for cach
 > Ladle
 
 Storybook alternative. Faster, neater, smaller version of storybook. Looks alot more base html. It does not support MDX &rarr; on list of thing to do. Backed by veet.
+
+> Jest switch statement
+
+toBe returns specific value
+toStrictEqual for arrays
+
+make sure you export the functions
+
+```js
+describe("ETLNode", () => {
+  it("should return correct conditions when passing connector hint through", () => {
+    expect(getOutputPorts(ConnectorHint.SuccessFail)).toStrictEqual([
+      "success",
+      "unconditional",
+      "failure",
+    ]);
+    expect(getOutputPorts(ConnectorHint.Unconditional)).toStrictEqual([
+      "unconditional",
+    ]);
+    expect(getOutputPorts(ConnectorHint.Conditional)).toStrictEqual([
+      "unconditional",
+    ]);
+  });
+});
+```
+
+> Grep
+
+- `history` // into terminal to see last commands
+- `history | grep live` // grep is a search
+- `grep `
+- `man grep`
+
+## Nov 21, 22
+
+> You can use css to override the styling of an svg. It doesnt even look like the svg has changed in the dom but it has
+
+!['svg css'](../assets/svgcss.png)
+
+> To clear your jest cache if you are getting old files coming up in your code coverage
+
+`npm ./node_modules/.bin/jest --clearCache`
+
+> When testing conditionals. When using an array use toStrictEqual
+
+```js
+import { getOutputPorts } from "../EtlNode";
+import { ConnectorHint } from "job-lib/types/Job";
+describe("ETLNode", () => {
+  it("should return correct conditions when passing connector hint through", () => {
+    expect(getOutputPorts(ConnectorHint.SuccessFail)).toStrictEqual([
+      "success",
+      "unconditional",
+      "failure",
+    ]);
+    expect(getOutputPorts(ConnectorHint.Unconditional)).toStrictEqual([
+      "unconditional",
+    ]);
+    expect(getOutputPorts(ConnectorHint.Conditional)).toStrictEqual([
+      "unconditional",
+    ]);
+  });
+});
+```
+
+> callingAMethod.toBeInstanceOf(itemItShouldBeAnInstanceOf)
+
+```js
+describe("Custom Link Styling", () => {
+  it("should activate generateModel", () => {
+    const advancedLinkFactoryInstance = new AdvancedLinkFactory();
+    const generateModel = advancedLinkFactoryInstance.generateModel();
+    expect(generateModel).toBeInstanceOf(AdvancedLinkModel);
+  });
+});
+```
