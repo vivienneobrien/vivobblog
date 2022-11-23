@@ -539,3 +539,13 @@ User-center design.
 Armour too heavy on flight. A report about where the plain got bullet holes. Collecting data. Concentration where are all the holes in the plain? Where do we increase the armour well we look for when we have the most bullet holes. Data of every plain that came back alive from the missions, you are not looking in the plain that never came back. The holes are not that important because they made it back but the planes that didn't come back we don't have the data. So they decided on the exact opposite of the plain. Not because the data was wrong but analysis and interpretation was bias because you were solely relying on the survivers. We get response by people who are the only ones who are replying to us. Your analaysis is only based on who volunteer to get back. More likely to get positive feedback than negative. If the users are angry or the "we don't know" are unlikely to give us feedback. The _visible_ part of the ice berg. People might drop out before the end so you never get the feedback. You only know the people who stayed on why they stayed on.
 
 **Abraham Wald** was the guy who saw it.
+
+## Nov 23, 2022
+
+> How often should we deploy to preprod prod? Especially when another persons PR is merging on top of mine.
+
+- Once you have merged your PR, your code is on dev.
+- You log on dev and check your changes on there.
+- Then you deploy to preprod, open the preprod version of the app and check your changes.
+- Then you deploy to prod, open the prod version and check your changes.
+- After the PR merge, there is nothing left to do on your local
