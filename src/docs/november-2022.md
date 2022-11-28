@@ -545,3 +545,33 @@ Armour too heavy on flight. A report about where the plain got bullet holes. Col
 - Then you deploy to preprod, open the preprod version of the app and check your changes.
 - Then you deploy to prod, open the prod version and check your changes.
 - After the PR merge, there is nothing left to do on your local
+
+## Nov 28, 22
+
+> Redux toolkit: An external place to store state without prop drilling
+
+Redux flow:
+
+1. Action
+2. Root reducer
+3. Store
+4. Dom changes
+
+Flux pattern:
+
+1. Action
+2. Dispatcher
+3. Store
+4. View
+
+Root reducer is the big object that holds all of the other reducers e.g. shop reducer, home reducer.. (a slice of state)
+
+This is why it is called the redux store
+
+![](../assets/redux.png)
+
+A reducer always has a switch statement. It takes in the current state and action. Then returns the new state.
+
+![](../assets/reducer.png)
+
+https://codesandbox.io/s/modest-https-h7x3m?file=%2Fsrc%2Fredux%2Fcounter.js%3A125-126
