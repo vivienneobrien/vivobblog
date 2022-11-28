@@ -574,3 +574,9 @@ A reducer always has a switch statement. It takes in the current state and actio
 ![](../../assets/reducer.png)
 
 https://codesandbox.io/s/modest-https-h7x3m?file=%2Fsrc%2Fredux%2Fcounter.js%3A125-126
+
+> If you want to see the window object in console type in `document.defaultView`
+
+https://developer.mozilla.org/en-US/docs/Web/API/Document/defaultView
+
+https://developer.mozilla.org/en-US/docs/Web/API/Window

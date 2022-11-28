@@ -35,3 +35,15 @@ function draw() {}
 
 ![](../../assets/p5/trunk_one.png)
 ![](../../assets/p5/trunk_two.png)
+
+Interesting tutorial: https://www.youtube.com/watch?v=HTCakn7pDs8
+
+> If you wanted to draw a square using a polygon
+
+```js
+// Square
+vertex(200, 200);
+vertex(200, 800); // bottom point
+vertex(800, 800);
+vertex(800, 200); // bottom to right
+```
