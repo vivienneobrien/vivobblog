@@ -2,6 +2,16 @@
 
 ## November 18, 22
 
+> Making a tree trunk
+> Things to consider:
+
+1. The points on the canvas you want the react to sit.
+2. The colours range you want by reloading everytime, should you use a randomiser to rerender everytime you reload?
+
+![](../../assets/p5/understanding_colour.png)
+![](../../assets/p5/understanding_of_rgb.png)
+![](../../assets/p5/brown.png)
+
 ```js
 function setup() {
   // create a canvas
