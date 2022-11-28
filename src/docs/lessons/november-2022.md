@@ -71,12 +71,12 @@ Create a swagger spec
 
 - Line 44 is where the code coverage is needed. Sometimes you can have from 32-44 lines you need to test.
 
-![Line 44 is where the code coverage is needed. Sometimes you can have from 32-44 lines you need to test.](../assets/code_coverage.png)
+![Line 44 is where the code coverage is needed. Sometimes you can have from 32-44 lines you need to test.](../../assets/code_coverage.png)
 
 - Viewing your ReadMe.md with the preview button in VS code.
 
-![PreviewButton](../assets/preview_middle_button.png)
-![Preview](../assets/preview_readme.png)
+![PreviewButton](../../assets/preview_middle_button.png)
+![Preview](../../assets/preview_readme.png)
 
 ## Nov 9, 22
 
@@ -456,7 +456,7 @@ describe("ETLNode", () => {
 
 > You can use css to override the styling of an svg. It doesnt even look like the svg has changed in the dom but it has. CAN BE CHANGED "PROGRAMATICALLY". You cant change all the properties in an svg this way e.g. stroke="red"
 
-!['svg css'](../assets/svgcss.png)
+!['svg css'](../../assets/svgcss.png)
 
 > To clear your jest cache if you are getting old files coming up in your code coverage
 
@@ -465,7 +465,7 @@ describe("ETLNode", () => {
 > When testing conditionals. When using an array use toStrictEqual
 
 ```js
-import { getOutputPorts } from "../EtlNode";
+import { getOutputPorts } from "../../EtlNode";
 import { ConnectorHint } from "job-lib/types/Job";
 describe("ETLNode", () => {
   it("should return correct conditions when passing connector hint through", () => {
@@ -506,7 +506,7 @@ describe("Custom Link Styling", () => {
   }
 ```
 
-![](../assets/svgcss.png)
+![](../../assets/svgcss.png)
 
 > path is worth exploring
 
@@ -548,10 +548,10 @@ Armour too heavy on flight. A report about where the plain got bullet holes. Col
 
 ## Nov 28, 22
 
-> Redux toolkit: An external place to store state without prop drilling
+> Redux toolkit: An external place to store state without prop drilling. Read documentation to quickly understand - Not complicated https://redux-toolkit.js.org/tutorials/quick-start
 
-![](../assets/redux_cheatsheet.png)
-![](../assets/redux.png)
+![](../../assets/redux_cheatsheet.png)
+![](../../assets/redux.png)
 
 1. Action
 2. Root reducer
@@ -571,6 +571,6 @@ This is why it is called the redux store
 
 A reducer always has a switch statement. It takes in the current state and action. Then returns the new state.
 
-![](../assets/reducer.png)
+![](../../assets/reducer.png)
 
 https://codesandbox.io/s/modest-https-h7x3m?file=%2Fsrc%2Fredux%2Fcounter.js%3A125-126

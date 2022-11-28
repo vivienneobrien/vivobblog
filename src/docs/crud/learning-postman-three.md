@@ -85,7 +85,7 @@ const useFetch = (url: string) => {
 };
 ```
 
-!["testing"](../assets/jsonserver-postman/Screenshot%202022-11-17%20at%2014.42.26.png)
+!["testing"](../../assets/jsonserver-postman/Screenshot%202022-11-17%20at%2014.42.26.png)
 
 > Navigator => Navigate for redirection and hold history or any redirections
 
@@ -140,7 +140,7 @@ const About = () => {
 };
 ```
 
-![''](../assets/jsonserver-postman/expected_assignment.png)
+![''](../../assets/jsonserver-postman/expected_assignment.png)
 
 What you can also do:
 
@@ -152,7 +152,7 @@ const goToItem = (id) => {
 
 > input element takes required otherwise gives you this error
 
-![''](../assets//jsonserver-postman/required_input.png)
+![''](../../assets//jsonserver-postman/required_input.png)
 
 > Every `<form>` takes an `onSubmit()` and usually has a `<button>` of `type="submit"` at the end
 
@@ -160,11 +160,11 @@ Something to seriously note about forms is that by default they do this really R
 
 > Another common error with forms after you've provided the `<input value={name}>`
 
-![""](../assets/jsonserver-postman/onchangeerror.png)
+![""](../../assets/jsonserver-postman/onchangeerror.png)
 
 So what you have to do here is add an `onChange={(e) => setName(e.target.value)}`
 
-![""](../assets/jsonserver-postman/myObject.png)
+![""](../../assets/jsonserver-postman/myObject.png)
 
 > Make sure the length of name in form is more than 0
 

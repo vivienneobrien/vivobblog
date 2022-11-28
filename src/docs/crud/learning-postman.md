@@ -14,13 +14,13 @@ Then once it is in your `package.json` then run the following command and since 
 
 By running this command the first time,it generates a db.json in the root of our folder with some default data.
 
-![This](../assets//jsonserver-postman//Screenshot%202022-11-15%20at%2014.13.40.png)
+![This](../../assets//jsonserver-postman//Screenshot%202022-11-15%20at%2014.13.40.png)
 
 Then is we run it again, we get a list of dummy data and are able to select from multiple resources
 
 `json-server --watch db.json --port 8000`
 
-![This](../assets//jsonserver-postman/Screenshot%202022-11-15%20at%2014.17.39.png)
+![This](../../assets//jsonserver-postman/Screenshot%202022-11-15%20at%2014.17.39.png)
 
 > Step 2.
 
@@ -43,11 +43,11 @@ Then to see data, run the `json-server --watch data/database.json --port 8000`
 1. Create a "personal" workspace
 2. Go to "New" and then select
 
-![Getting http request page](../assets//jsonserver-postman/postman-page.png)
+![Getting http request page](../../assets//jsonserver-postman/postman-page.png)
 
 3. Type in your base path and end point i.e. `http://localhost:3000/company` then you can also add paramters `http://localhost:3000/company/1` or else try out fake ones and see what you get `http://localhost:3000/company/789` We should get an empty response if it is not in our json.
 
-![send a get request](../assets/jsonserver-postman//getanddisplay.png)
+![send a get request](../../assets/jsonserver-postman//getanddisplay.png)
 
 4.  To add this unkown data what you do is copy the copy
 
@@ -62,7 +62,7 @@ Then to see data, run the `json-server --watch data/database.json --port 8000`
 
 And create a "post" in a new tab. Then select body > raw > Text and select JSON
 
-![send a post request](../assets/jsonserver-postman/post_one.png)
+![send a post request](../../assets/jsonserver-postman/post_one.png)
 
 Then paste you data object into the canvas but change the data to what you desire
 
@@ -77,7 +77,7 @@ Then paste you data object into the canvas but change the data to what you desir
 
 > Step 5 - After post
 
-![send a post request](../assets/jsonserver-postman/after_post.png)
+![send a post request](../../assets/jsonserver-postman/after_post.png)
 
 201 response means that it was created: The request has been fulfilled and resulted in a new resource being created.
 
@@ -89,9 +89,9 @@ Add another object with id=3
 
 Use an ID in your database and change the name of the ID and make sure you target that specific ID in your url.
 
-![send a post request](../assets/jsonserver-postman/put_real.png)
+![send a post request](../../assets/jsonserver-postman/put_real.png)
 
-![check all gets](../assets/jsonserver-postman/last.png)
+![check all gets](../../assets/jsonserver-postman/last.png)
 
 > Step 7 - Delete
 

@@ -6,7 +6,7 @@ Before
 <Company companyData={companyData} />
 ```
 
-![''](../assets/renderonlyifhave.png)
+![''](../../assets/renderonlyifhave.png)
 
 Removes error by checking if it has that value
 
@@ -35,11 +35,11 @@ useEffect(() => {
 
 > Data not returning - If I _do not_ have my json server running and I run my application I will get this error:
 
-![''](../assets/jsonserver-postman/error.png)
+![''](../../assets/jsonserver-postman/error.png)
 
 but if I add `.catch((res) => console.log(res.message));` to my useEffect it will come up like this:
 
-![''](../assets/jsonserver-postman/error-two.png)
+![''](../../assets/jsonserver-postman/error-two.png)
 
 >
 
@@ -57,7 +57,7 @@ useEffect(() => {
 }, []);
 ```
 
-![''](../assets/jsonserver-postman/no_data.png)
+![''](../../assets/jsonserver-postman/no_data.png)
 
 > So now if a user were to type in a different URL, our site would not be able to fetch the data.
 
@@ -84,7 +84,7 @@ useEffect(() => {
 
 ```
 
-![''](../assets/jsonserver-postman/failed-response.png)
+![''](../../assets/jsonserver-postman/failed-response.png)
 
 Then make sure you set loading to false because it simply just HAS NOT GOT the data.
 
@@ -115,7 +115,7 @@ If you had an url `http://localhost:3000/testing` but it was set up as
 
 You would get the following error:
 
-![''](../assets/jsonserver-postman/no_routing_matching.png)
+![''](../../assets/jsonserver-postman/no_routing_matching.png)
 
 but when we put in `http://localhost:3000/testing/1` then we will get the correct return of the full page. If we put in `http://localhost:3000/testing/2` it would give us the same render page.
 
