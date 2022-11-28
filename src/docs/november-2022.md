@@ -550,7 +550,8 @@ Armour too heavy on flight. A report about where the plain got bullet holes. Col
 
 > Redux toolkit: An external place to store state without prop drilling
 
-Redux flow:
+![](../assets/redux_cheatsheet.png)
+![](../assets/redux.png)
 
 1. Action
 2. Root reducer
@@ -567,8 +568,6 @@ Flux pattern:
 Root reducer is the big object that holds all of the other reducers e.g. shop reducer, home reducer.. (a slice of state)
 
 This is why it is called the redux store
-
-![](../assets/redux.png)
 
 A reducer always has a switch statement. It takes in the current state and action. Then returns the new state.
 
