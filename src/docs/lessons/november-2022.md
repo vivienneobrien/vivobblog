@@ -580,3 +580,13 @@ https://codesandbox.io/s/modest-https-h7x3m?file=%2Fsrc%2Fredux%2Fcounter.js%3A1
 https://developer.mozilla.org/en-US/docs/Web/API/Document/defaultView
 
 https://developer.mozilla.org/en-US/docs/Web/API/Window
+
+## Nov 30, 22
+
+> Navigation
+
+Is there any ticket regarding using react-helm or similar approaches to change the title of the document based on routing, so that “back” navigation steps have a meaningful rendering in the browser?
+
+> Sneak
+
+Picked up third party vulnerabilities. Monitors to make sure we are using the latest react because people are always trying to break into react and react people have been working on it to make sure it is not breakable.
