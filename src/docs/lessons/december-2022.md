@@ -66,3 +66,55 @@ it("should remove an object item (in object item list) from the object model", (
   ).toEqual({ jobType: JobType.Transformation, job: result });
 });
 ```
+
+> Filtering through key value pairs/ objects
+
+```js
+Object.keys; // returns keys
+Object.values; // returns values
+Object.entries; // returns key and value pairs
+```
+
+> ...spreadOperator
+
+> Go over this one
+
+```js
+let a = {
+  foo: "bar",
+  bar: {
+    baz: 123,
+  },
+};
+```
+
+- a shallow copy when you do spread and manipulating the original object
+
+- when you start to get deeply nesting values
+
+it will do a deep copy of that object
+
+let {foo, bar} = a
+
+// gives us a reference to the object rather than a new variable
+
+// mutated original object
+// a new value is created rather than a reference value
+
+1. will recreate orchestration job
+2. we are mutating nested objects
+3. then in new tests those tests are there
+
+b bringing
+// always be a clean copy
+// the input is always the same between the tests
+
+image![](./Screenshot%202022-12-01%20at%2016.55.31.png)
+image![](./Screenshot%202022-12-01%20at%2016.55.43.png)
+image![](./Screenshot%202022-12-02%20at%2013.59.22.png)
+
+## December 5, 22
+
+> Cypress cheat sheet
+> Lyndsey recommended to use this to refer back to
+> https://cheatography.com/aiqbal/cheat-sheets/cypress-io/
