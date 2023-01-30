@@ -5,3 +5,5 @@ I wanted to keep track and be able to reflect of the everyday lessons I learn on
 ### [November 2022 Lessons](./november-2022.md)
 
 ### [December 2022 Lessons](./december-2022.md)
+
+### [January 2023 Lessons](./twentythree//january-2023.md)

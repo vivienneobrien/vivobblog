@@ -118,3 +118,39 @@ image![](./Screenshot%202022-12-02%20at%2013.59.22.png)
 > Cypress cheat sheet
 > Lyndsey recommended to use this to refer back to
 > https://cheatography.com/aiqbal/cheat-sheets/cypress-io/
+
+Fetch request in the network tab
+
+> Scoping a variable to a specific function so you don't keep calling the same instance name over and over
+
+\_instanceId
+
+> Jest: objectContaining({})
+
+## December 6, 22
+
+> enum
+
+- An enum is a special "class" that represents a group of constants (unchangeable variables).
+
+```js
+            enum ComponentConnectorProperties {
+              INPUT = 'inputConnectorIDs',
+              SUCCESS = 'outputSuccessConnectorIDs',
+              FAILURE = 'outputFailureConnectorIDs',
+              UNCONDITIONAL = 'outputUnconditionalConnectorIDs'
+            }
+
+            const componentConnectors = [
+              ComponentConnectorProperties.INPUT,
+              ComponentConnectorProperties.SUCCESS,
+              ComponentConnectorProperties.FAILURE,
+              ComponentConnectorProperties.UNCONDITIONAL
+            ]
+```
+
+## Dec 7, 22
+
+> useCallBack() within useEffect
+
+> Calling a function versus making reference and then calling a function
