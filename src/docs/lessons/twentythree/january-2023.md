@@ -264,3 +264,20 @@ export const useDeleteComponent = () => {
   return { deleteNodes, selectedNodes };
 };
 ```
+
+## Jan 30
+
+Very awesome blog on event bubbling and catching:
+https://www.freecodecamp.org/news/event-propagation-event-bubbling-event-catching-beginners-guide/#what-is-event-bubbling
+
+```js
+useEffect(() => {
+  function handleKeyPress(e: KeyboardEvent) {
+    e.stopPropagation();
+  }
+  document.addEventListener("keydown", handleKeyPress, true);
+  return () => {
+    document.removeEventListener("keydown", handleKeyPress, true);
+  };
+}, []);
+```
