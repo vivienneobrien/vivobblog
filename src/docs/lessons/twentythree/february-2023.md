@@ -27,3 +27,39 @@ Look at css you tried for adding (optional)
 ## Feb 9
 
 Look more into retrys
+
+## Feb 22
+
+> What is load testing? 
+The most important part of performance testing. Provides loads less than/ equal to the desired load of an application.
+Load is a quantity that only focuses on the number of users.
+
+> What is stress testing? 
+Checked the bahviour of the application once the load testing occurs. We only use stress testing when the application is completley stable. It is non-functional testing.
+
+image![](../../../assets/stressandloadtesting.jpeg)
+
+> What is K6?
+It is an open source load testing tool. Return GO as the backend and testers can write tests in Javascript. Two flavours of K6 - open source and if you want to scale then you can use the k6 cloud.
+
+To run `k6 run fileName.js`
+
+`k6 version`
+
+> What is Apache Kafka? DECOUPLING. Transportation mechanism. 
+
+Created by Linkedin and maintained by confluence.
+Each integration comes with difficulties around:
+Types of protocols - How the data is transported: HTTP/ REST/ TCP/ FTP/ JDBC
+Data format - How the data is parsed: Binary, CSV, JSON, Avro
+Data schema and evolution - How the data is shaped and may chance
+
+Each time you integrate a source system with a target system, the source system will have an increase in load from the connections
+
+Apache Kafka allows you to decouple your data streams and systems.
+
+image![](../kafka.png)
+
+High performance - latency of less than 10ms. Run time is really low which is great!
+
+Apache Kafka - Use cases: messaging system ,activity tracking, gather metrics from many different locations, application logs gathering, stream processing, de-coupling of system dependencies, or perform big data integrations with spark, flink, storm, hadoop and many other big data technologies
