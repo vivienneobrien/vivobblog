@@ -153,4 +153,21 @@ TextInputProps & Omit<HTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
 const [isChecked, setIsChecked] = useState<boolean>(defaultChecked ?? false)
 
+async and await 
+
+** Tree Data structure in react **
+
 ```
+
+### April 17
+
+A good way to debug:
+```js
+<div>
+  <pre>
+    {JSON.stringify(detailsPane.data, null, 2)}
+  </pre>
+</div>
+```
+
+![How it would look on screen](./../Screenshot%202023-04-17%20at%2009.44.44.png)
