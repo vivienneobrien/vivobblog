@@ -9,17 +9,17 @@
 3. How often customer runs jobs that updates database
 4. What are the key datapoints?/ Most important ones
 5. Should it be in one big table or split out?
-6. How long do we store the data? Right now it could be 3 months in the old product, but we could increase or decrease this range. We could also have a short term and long term database, where after 3 months the data can be moved to the long term database. 
-7. How often will customers be make requests which will contribute to the number of rows in the database. We are looking at 7.7 million rows in one table. 
+6. How long do we store the data? Right now it could be 3 months in the old product, but we could increase or decrease this range. We could also have a short term and long term database, where after 3 months the data can be moved to the long term database.
+7. How often will customers be make requests which will contribute to the number of rows in the database. We are looking at 7.7 million rows in one table.
 
 > ## High availability architecture (maintain a high level of availability and reliability)
 
-A system or application that is able to maintain a high level of availability and reliability, even in the face of disruptions or failures. Ensures system will always run. E.g. load balancers, backup power supplies, redundant servers and data storage systems. Back up components in case of failure. 
+A system or application that is able to maintain a high level of availability and reliability, even in the face of disruptions or failures. Ensures system will always run. E.g. load balancers, backup power supplies, redundant servers and data storage systems. Back up components in case of failure.
 
 ## Kubernetes (development, scaling and managemen)
+
 also known as k8 because 8 letters after k
 Orchestration platform that automates the development, scaling and management of containerised applications
-
 
 > ## Non-functional requirement (NFR)
 
@@ -35,7 +35,6 @@ This approach has several advantages. It allows organizations to create data mod
 
 Overall, a product-agnostic data model is a powerful tool for managing data in a flexible and adaptable way, and is becoming increasingly popular as organizations look to streamline their data management processes.
 
-
 > ## What does it mean to implement regional data segregation? (need to implement regional data segregation to ensure that personal data is stored and processed in compliance with local laws and regulations/ of that region or location)
 
 Implementing regional data segregation means to store and process data in a way that separates it by geographic region or location. This approach is typically used to ensure compliance with data privacy laws and regulations that require organizations to protect personal data and prevent unauthorized access or disclosure.
@@ -46,11 +45,9 @@ Regional data segregation can help organizations protect personal data and preve
 
 Overall, implementing regional data segregation is an important consideration for organizations that operate in multiple regions or countries and need to comply with data privacy laws and regulations.
 
-
 > ## Permissions Service (RBAC) - Checks if you have permission in your account. Only authorized users can access this sensitive information
 
 Our service will also interact with the nascent Permissions Service (RBAC) to query and validate the user’s access to projects within the account, to determine the subset of pipeline data they are allowed to see.
-
 
 This means: When you use our service, we will also use a new tool called the Permissions Service to check if you have permission to access certain projects within your account. This will help us determine what data you are allowed to see from those projects. We want to make sure that only authorized users can access sensitive information, so we will be using this tool to make sure everything is secure.
 
@@ -76,7 +73,7 @@ We put launch darkley in terraform. This connects to the hub client. You can acc
 
 > Install issues:
 
-``npm ci``
+`npm ci`
 
 ## Prerequisites
 
@@ -119,8 +116,11 @@ https://www.freecodecamp.org/news/install-xcode-command-line-tools/
 ## April 11th
 
 ### Search a searchTerm
-``` js
-data.filter((value)=> value.name.toLowerCase().includes(searchTerm.toLowerCase()))
+
+```js
+data.filter((value) =>
+  value.name.toLowerCase().includes(searchTerm.toLowerCase())
+);
 ```
 
 ```js
@@ -130,7 +130,7 @@ data.filter((value)=> value.name.toLowerCase().includes(searchTerm.toLowerCase()
       )
 ```
 
-> Todo: 
+> Todo:
 
 Need to do revision on:
 
@@ -141,7 +141,7 @@ Need to do revision on:
 
 - useMemo, useState, useEffect, useContext, useCallback, useRef, useReducer (other useLayoutEffect, useImperativeMethod, useMutationEffect), forwardRef, useTranslation
 
-- common types from typescript: 
+- common types from typescript:
 
   onTabClose?: (event: MouseEvent) => void
   onChange: (newValue: string) => unknown
@@ -153,7 +153,7 @@ TextInputProps & Omit<HTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
 const [isChecked, setIsChecked] = useState<boolean>(defaultChecked ?? false)
 
-async and await 
+async and await
 
 ** Tree Data structure in react **
 
@@ -162,12 +162,74 @@ async and await
 ### April 17
 
 A good way to debug:
+
 ```js
 <div>
-  <pre>
-    {JSON.stringify(detailsPane.data, null, 2)}
-  </pre>
+  <pre>{JSON.stringify(detailsPane.data, null, 2)}</pre>
 </div>
 ```
 
 ![How it would look on screen](./../Screenshot%202023-04-17%20at%2009.44.44.png)
+
+## April 25
+
+```js
+
+const useGetComponentTree = (jobType?: JobType, searchTerm?: string) => {
+  const { data, ...rest } = useComponentSummaries(jobType)
+  const { t } = useTranslation()
+  const { disabledComponents } = useFlags()
+  // if the search term does not
+  const components = Object.values(data ?? {})
+    .filter((componentInfo) => {
+      const displayName = t(
+        `componentSummaries:components.${componentInfo.componentId}.displayName`
+      )
+      return displayName
+        .toLowerCase()
+        .includes(searchTerm?.toLowerCase() as string)
+    })
+    .reduce((comps, comp) => {
+      return {
+        ...comps,
+        [comp.componentId]: comp
+      }
+    }, {})
+
+  const componentTree = useMemo(() => {
+    return nestComponentsInTree(components, t, disabledComponents)
+  }, [components, t, disabledComponents])
+
+  return {
+    componentTree,
+    resultsFound: Object.keys(componentTree || {}).length > 0, // if no search term matches
+    ...rest
+  }
+}
+
+```
+
+How to extract the values to make use of the hook logic for the ui
+
+always try separate hook and logic for us
+_resultsFound_
+
+```js
+const { componentTree, isLoading, isError, resultsFound } = useGetComponentTree(
+  summary?.type,
+  searchTerm
+);
+```
+
+display on UI
+
+```js
+if (!resultsFound) {
+  return (
+    <PanelErrorStatus
+      includeLink={false}
+      text={t("sideBar.componentPanel.notFound")}
+    />
+  );
+}
+```
