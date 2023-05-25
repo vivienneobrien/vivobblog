@@ -233,3 +233,11 @@ if (!resultsFound) {
   );
 }
 ```
+
+### May 25
+
+https://itnext.io/react-polymorphic-components-with-typescript-f7ce72ea7af2
+
+https://www.typescriptlang.org/play?module=1&ssl=14&ssc=2&pln=7&pc=1#code/JYWwDg9gTgLgBAbzgYQuCA7AphmAFKCMAZwHVgYALCAVxgCUsAzAGjgFEAbLEHGAFQCeYLHAC+cJoRBwA5FCwBDAMYxZAWABQWrAA9IsOMFxYoTFaIBCdGJgJFiAHiEi4emDgAmxDt164XLAA+RC04OEViAH4ALjhArTEtHX1oeGVMYnhrGFsMOABeOGc3XQ8Mb18ePkDCuQAjG0xZIIAKBDCI4hZOgDp+hSzEuJy8+xJnEIAyOAB5EApHVHRsXHGyCmo6RiZJtgBrLEEIJjhRu0IJ-iCggEpCkI7NcIyMLJQ0SFX4Isi4AB9-g0mhgNNpnnAFDAaFB8ktPpg+Ih+r1BjAJAB6IKJZKaV7vLCcOqOc75GDCLAFABEjVymCpcCxuPx8GIYEU+SKJJBXWpbI5DKZmiAA
+
+https://www.benmvp.com/blog/forwarding-refs-polymorphic-react-component-typescript/
