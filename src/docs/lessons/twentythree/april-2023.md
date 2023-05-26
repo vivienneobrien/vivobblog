@@ -247,16 +247,19 @@ https://www.benmvp.com/blog/forwarding-refs-polymorphic-react-component-typescri
 if the agent doesnt have a connection then bring up a page
 at the root and toggle the height: 0% to 100%
 
+The overflow property is set to hidden to ensure that any content within the block is not visible. By setting these properties, the block will still be present in the DOM but won't be visible to the user.
+
 ````js
-  <div
-          style={{
-            position: 'absolute',
-            height: '100%',
-            width: '100%',
-            zIndex: '100'
-          }}
-        >
-          <AgentConnectionError />
-        </div>
+ <div
+  style={{
+    position: 'absolute',
+    height: '0', // 100%
+    width: '0', // 100%
+    overflow: 'hidden',
+    zIndex: '100'
+  }}
+>
+  <AgentConnectionError />
+</div>
         ```
 ````
