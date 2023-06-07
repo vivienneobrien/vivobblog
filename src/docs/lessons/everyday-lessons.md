@@ -13,3 +13,5 @@ I wanted to keep track and be able to reflect of the everyday lessons I learn on
 ### [April 2023 Lessons](./twentythree//april-2023.md)
 
 ### [May 2023 Lessons](./twentythree//may-2023.md)
+
+### [June 2023 Lessons](./twentythree//june-2023.md)
