@@ -56,3 +56,408 @@ query key that unique identifies this query
 > Params and body
 
 Params correspond to the request parameters that are appended to the request URL.they are most used with GET requests. On the other hand, Body is the actual request body (usually it defines the request payload or the data that needs to be processed by the request). PUT and POST requests read usually the data from the body of the request and not from the params.
+
+> All the ways to fix this error:
+> "ERR_CONNECTION_REFUSED"
+> https://www.hostinger.com/tutorials/err_connection_refused
+
+![get-error.png]('../get-error.png')
+
+```js
+if (warehouses) {
+  if (!warehouses.hasOwnProperty(projectWarehouse)) {
+    return false;
+  }
+}
+```
+
+if we dont need it we can add an underscore
+
+```js
+const name = (_something) => {};
+```
+
+Object.assign
+
+lodash
+import cloneDeep from lodash
+
+> VERY IMPORTANT: how to deconstruct on multiple levels:
+
+const { metadata: {parameters} } = cloneDeep(response)
+
+> Can also
+> const output = cloneDeep
+
+output.metadata.parameter = output.metadata.parameter.filter(() => {})
+
+const valid = data?.warehouse as string
+
+this gets rid of undefined
+
+```js
+import { mockOrchestrationValues } from '__test-utils__/mockOrchestrationValues'
+
+import { mockCustomIsParameterVisible } from 'api/hooks/useGetComponentMetadata/__handlers__/mockComponentsMetadata/mockCustomIsParameterVisible'
+import {
+  ComponentMetadata,
+  EditorType,
+  ParameterDataType,
+  VisibleWhenOperator
+} from 'api/hooks/useGetComponentMetadata/types'
+import { mockOrchestrationJob } from 'api/hooks/useGetJob/__handlers__/mockOrchestrationJob'
+
+import { OrchestrationComponentInstance } from 'job-lib/types/Job'
+import { dplParamsKey } from 'job-lib/types/Parameters'
+
+import { isParameterVisible } from './isParameterVisible'
+
+const slots = {
+  default: 1,
+  operatorNever: 2,
+  operatorUnknown: 3,
+  operatorEqualsMatch: 4,
+  operatorEqualsNoMatch: 5,
+  operatorNotEqualsMatch: 6,
+  operatorNotEqualsNoMatch: 7,
+  operatorINExists: 8,
+  operatorINDoesNotExist: 9,
+  operatorNOTINNotExist: 10,
+  operatorNOTINExists: 11,
+  operatorHASVALUE: 12,
+  operatorMATCHESREGEXPATTERN: 13,
+  operatorMATCHESREGEXPATTERNNoMatch: 14,
+  operatorDYNAMICVISIBILITYLOOKUP: 15,
+  operatorParamEmpty: 16,
+  operatorEqualsDPLID: 17
+}
+
+const mockOrchestrationComponent: OrchestrationComponentInstance = {
+  ...mockOrchestrationJob.components[mockOrchestrationValues.CREATE_TABLE_0.id],
+  parameters: {
+    1: {
+      slot: 1,
+      name: 'nameFoo',
+      visible: true,
+      elements: {
+        1: {
+          slot: 1,
+          values: {
+            1: {
+              slot: 1,
+              type: 'STRING',
+              dataType: ParameterDataType.TEXT,
+              value: 'valueFoo'
+            }
+          }
+        }
+      }
+    },
+    2: {
+      slot: 2,
+      name: 'nameBar',
+      visible: true,
+      elements: {
+        1: {
+          slot: 1,
+          values: {
+            1: {
+              slot: 1,
+              type: 'STRING',
+              dataType: ParameterDataType.TEXT,
+              value: 'valueBar'
+            }
+          }
+        }
+      }
+    },
+    3: {
+      slot: 3,
+      name: 'nameRegex',
+      visible: true,
+      elements: {
+        1: {
+          slot: 1,
+          values: {
+            1: {
+              slot: 1,
+              type: 'STRING',
+              dataType: ParameterDataType.TEXT,
+              value: '.*notMat$'
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+describe('visibleWhen using DPL parameters', () => {
+  const mockDPLParameters = {
+    componentName: 'mock component',
+    struct: {
+      childProperty: 'mock value',
+      childProperty2: 'mock value 2'
+    },
+    mockParam: 'value2'
+  }
+  const mockDPLComponentInstance = {
+    parameters: {
+      1: {},
+      2: {
+        name: dplParamsKey,
+        elements: {
+          1: {
+            values: {
+              1: {
+                value: JSON.stringify(mockDPLParameters)
+              }
+            }
+          }
+        }
+      }
+    }
+  } as unknown as OrchestrationComponentInstance
+  const mockNestedParameterMetadata = {
+    parameters: [
+      {
+        id: 'struct',
+        dplID: 'struct',
+        resourceID: 'mockResourceId',
+        metlSlot: 1,
+        dataType: ParameterDataType.STRUCT,
+        editorType: EditorType.PARAMETER_GROUP,
+        optional: false,
+        childProperties: [
+          {
+            id: 'child-property',
+            dplID: 'childProperty',
+            resourceID: 'mockResourceId',
+            metlSlot: 1,
+            dataType: ParameterDataType.TEXT,
+            editorType: EditorType.FREETEXT,
+            optional: false,
+            visibleWhen: [
+              {
+                param: 'childProperty2',
+                operator: VisibleWhenOperator.EQUALS,
+                value: 'mock value'
+              }
+            ]
+          },
+          {
+            id: 'child-property2',
+            dplID: 'childProperty2',
+            resourceID: 'mockResourceId',
+            metlSlot: 2,
+            dataType: ParameterDataType.TEXT,
+            editorType: EditorType.FREETEXT,
+            optional: false,
+            visibleWhen: [
+              {
+                param: 'childProperty',
+                operator: VisibleWhenOperator.EQUALS,
+                value: 'mock value'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'mock-param',
+        dplID: 'mockParam',
+        resourceID: 'mockResourceId',
+        metlSlot: 2,
+        dataType: ParameterDataType.TEXT,
+        editorType: EditorType.FREETEXT,
+        optional: false
+      },
+      {
+        id: 'mock-param2',
+        dplID: 'mockParam2',
+        resourceID: 'mockResourceId',
+        metlSlot: 3,
+        dataType: ParameterDataType.TEXT,
+        editorType: EditorType.FREETEXT,
+        optional: false,
+        visibleWhen: [
+          {
+            param: 'mockParam',
+            operator: VisibleWhenOperator.IN,
+            value: ['value1', 'value2']
+          }
+        ]
+      }
+    ]
+  } as unknown as ComponentMetadata
+
+  describe('Visibility for nested parameter', () => {
+    it.each([
+      {
+        parameter: 'childProperty',
+        path: ['struct'],
+        expected: false
+      },
+      {
+        parameter: 'mockParam2',
+        path: [],
+        expected: true
+      },
+      {
+        parameter: 'childProperty2',
+        path: ['struct'],
+        expected: true
+      },
+      {
+        parameter: 'childProperty2',
+        path: ['struct', 'unknown'],
+        expected: false
+      }
+    ])(
+      'should return the correct visibility for a DPL parameter',
+      ({ parameter, path, expected }) => {
+        const result = isParameterVisible(
+          parameter,
+          mockDPLComponentInstance.parameters,
+          mockNestedParameterMetadata,
+          path
+        )
+        expect(result).toBe(expected)
+      }
+    )
+  })
+})
+
+describe('VisibleWhen operators', () => {
+  it.each([
+    {
+      testCase: 'when there is no metadata in the component-name parameter',
+      expectedResult: true,
+      slot: slots.default
+    },
+    {
+      testCase:
+        'should return false when the visibleWhen operator is NEVER in the new-table-name parameter',
+      expectedResult: false,
+      slot: slots.operatorNever
+    },
+    {
+      testCase:
+        'should show a field if the operator is unknown e.g. FOO in the table-type parameter in visibleWhen',
+      expectedResult: true,
+      slot: slots.operatorUnknown
+    },
+    {
+      testCase: 'should return true when the parameter value does match',
+      expectedResult: true,
+      slot: slots.operatorEqualsMatch
+    },
+    {
+      testCase: 'should return false when the parameter value does not match',
+      expectedResult: false,
+      slot: slots.operatorEqualsNoMatch
+    },
+    {
+      testCase: 'should return false when the parameter value matches',
+      expectedResult: false,
+      slot: slots.operatorNotEqualsMatch
+    },
+    {
+      testCase: 'should return true when the parameter value does not match',
+      expectedResult: true,
+      slot: slots.operatorNotEqualsNoMatch
+    },
+    {
+      testCase: 'should return true when the parameter value exists',
+      expectedResult: true,
+      slot: slots.operatorINExists
+    },
+    {
+      testCase: 'should return false when the parameter value does not exist',
+      expectedResult: false,
+      slot: slots.operatorINDoesNotExist
+    },
+    {
+      testCase: 'should return true when the parameter value does not exist',
+      expectedResult: true,
+      slot: slots.operatorNOTINNotExist
+    },
+    {
+      testCase: 'should return false when the parameter value does exist',
+      expectedResult: false,
+      slot: slots.operatorNOTINExists
+    },
+    {
+      testCase: 'should return true when the parameter value exists',
+      expectedResult: true,
+      slot: slots.operatorHASVALUE
+    },
+    {
+      testCase:
+        'should return true when the parameter value matches the regex pattern',
+      expectedResult: true,
+      slot: slots.operatorMATCHESREGEXPATTERN
+    },
+    {
+      testCase:
+        'should return false when the parameter value does not match regex pattern',
+      expectedResult: false,
+      slot: slots.operatorMATCHESREGEXPATTERNNoMatch
+    },
+    {
+      testCase: 'should return true until implemented',
+      expectedResult: true,
+      slot: slots.operatorDYNAMICVISIBILITYLOOKUP
+    },
+    {
+      testCase: 'should return true when visibleWhen contains no parameters',
+      expectedResult: true,
+      slot: slots.operatorParamEmpty
+    },
+    {
+      testCase:
+        'should be able to determine that a parameter is visible using a dplId in the columns parameter',
+      expectedResult: true,
+      slot: slots.operatorEqualsDPLID
+    },
+    {
+      testCase: 'should return true when visibleWhen contains no parameters',
+      expectedResult: true,
+      slot: slots.operatorParamEmpty
+    },
+    {
+      testCase:
+        'should return false when the visibleWhen operator is NEVER in the new-table-name parameter',
+      expectedResult: false,
+      slot: slots.operatorNever
+    },
+    {
+      testCase:
+        'should show a field if the operator is unknown e.g. FOO in the table-type parameter in visibleWhen',
+      expectedResult: true,
+      slot: slots.operatorUnknown
+    },
+    {
+      testCase:
+        'should return true when visibleWhen is null in the component-name parameter',
+      expectedResult: true,
+      slot: slots.default
+    }
+  ])(
+    'should return the $expectedResult $testCase',
+    ({ expectedResult, slot }) => {
+      const parameters = mockOrchestrationComponent.parameters
+      const metadata = mockCustomIsParameterVisible.metadata
+      const result = isParameterVisible(slot, parameters, metadata)
+      expect(result).toBe(expectedResult)
+    }
+  )
+})
+
+it('should return true when there is no metadata in the component-name parameter', () => {
+  const parameters = mockOrchestrationComponent.parameters
+  const result = isParameterVisible(slots.default, parameters)
+  expect(result).toBe(true)
+})
+
+```
