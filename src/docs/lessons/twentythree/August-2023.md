@@ -461,3 +461,68 @@ it('should return true when there is no metadata in the component-name parameter
 })
 
 ```
+
+> flat() into a single-level array of values.
+
+> Checking for ndefined
+
+```js
+const values = row.values !== undefined ? row.values : [];
+```
+
+can just be written as :
+
+```js
+const values = row.values ?? [];
+```
+
+if (rowData?.values) {
+
+Leo Demousselle
+We should avoid the usage of conditional logic inside of a test, the whole test needs to be assertive and specific on what we are doing. If we expect values to not be defined, we should have a test against that case. If we are testing for values that do exist, we should have another test case for that, but we shouldn’t be doing conditional checks, otherwise we’d need to test our test!
+
+You’re using a mock and you know whether this will be undefined or not. If by any chance you’re getting lint-errors about the type, you should know whether the lint is correct or not, and based on that, you can force the type because you have control on what the test is being fed with!
+
+        // Check if rowData and rowData.values are defined
+        rowData.values.forEach((cell) => {
+          expect(within(row).queryAllByText(cell)).not.toBeNull()
+
+> Please do:
+
+```js
+if (!values.length) {
+```
+
+instead of:
+
+```js
+if (values.length === 0) {
+
+```
+
+> For sonarcloud:
+
+rowIndex and cellIndex are numbers. It’s not recommended to use indexes as keys but in this case there’s not much else we can do. these have been parsed as strings so sonar has one less thing to pick up on.
+
+Could you parse these as strings so Sonarcloud has one less thing to pick on?
+
+Do not do:
+
+```js
+        <TableCell
+              key={`cell-${rowIndex}-${cellIndex}`}
+              className={classes.SampleComponentResults__Cell}
+              id={cellIndex}
+            >
+```
+
+Please do:
+
+```js
+<TableCell
+key={`cell-${String(rowIndex)}-${String(cellIndex)}`}
+className={classes.SampleComponentResults\_\_Cell}
+id={cellIndex} >
+```
+
+![./fctypes]
