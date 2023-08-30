@@ -526,3 +526,30 @@ id={cellIndex} >
 ```
 
 ![./fctypes]
+
+Learning
+
+- When running scripts in package.json you always put npm run \_\_ the script
+
+```js
+ "scripts": {
+    "start": "react-scripts start",
+```
+
+To sign into postgres:
+psql -U postgres
+
+json webtoken allows us to stay signed in even when we navigate away from it
+
+will listen for constant changes
+"scripts": {
+"start": "nodemon server.js"
+},
+
+"scripts": {
+"start": "node server.js" // will run script once
+},
+
+<fieldset>
+
+ephemeral div
