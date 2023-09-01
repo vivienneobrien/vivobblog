@@ -553,3 +553,12 @@ will listen for constant changes
 <fieldset>
 
 ephemeral div
+
+> type predicates
+
+```js
+export const isComponentNode = (node?: EtlCanvasNode): node is ComponentNode =>
+
+```
+
+![Alt text](image.png)
