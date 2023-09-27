@@ -136,3 +136,63 @@ means if its truthy/ true
 
 bubbling capturing and stopPropagation
 https://www.youtube.com/watch?v=XF1_MlZ5l6M&ab_channel=WebDevSimplified
+
+## 27th of September
+
+2 main ways to store data inside a browser
+
+Cookies versus local storage versus session storage
+
+![](../../../assets/cookies.png)
+
+Common: all 3 of them are stored on the users actual browser e.g. google chrome/ firefox. Doesnt carry across browsers => Browser Independent.
+
+Users do not share cookied between them. Cookie only displayed for that user and not a user on a different computer. User can always delete their cookies/session/local storage anytime.
+
+Local storage and session storage are very similar in how they interact and only differ in afew areas.
+
+Cookies are compelely different and alot older than other two. Cookies store a far smaller amount of information i.e. 4kb for most browsers.
+
+Cookies are supported in older browsers like html4 because they have been around for so much longer.
+
+You only want cookies if you want to send it to the server. Always use local and session storage unless you need to send it to the server.
+
+![](./cookieandsess.png)
+
+local storage is persistent.
+for example is you were to run the below code
+
+```js
+localStorage.setItem("name", "Bob");
+localStorage.getItem("name");
+```
+
+but then remove this line
+
+```js
+localStorage.getItem("name");
+```
+
+you would still get the same result
+session storage would end if you close our of the browser.
+if you were to remove the key value pair manually in the browser you would get null
+
+```js
+sessionStorage.setItem("name", "Sarah"); // key value pairs
+console.log("Sarah");
+sessionStorage.removeItem("name", "Sarah");
+```
+
+cookies are more complicated to work this
+cookies do not have a nice way to interact
+the ; means it will go on to the next session of the cookie
+
+```js
+document.cookie = "name=Viv; expires=" + new Date(2020, 0, 1).toUTCString;
+```
+
+![](./expire.png)
+
+If you want to view a single cookie, you cant, you can only view them all at once using the console.log(document.cookie)
+
+Use a library to do this instead
