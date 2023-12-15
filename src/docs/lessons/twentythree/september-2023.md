@@ -196,3 +196,7 @@ document.cookie = "name=Viv; expires=" + new Date(2020, 0, 1).toUTCString;
 If you want to view a single cookie, you cant, you can only view them all at once using the console.log(document.cookie)
 
 Use a library to do this instead
+
+!!storageEditorType is converting storageEditorType to a boolean value
+
+In JavaScript, the !! operator is often used to convert a value to a boolean.
